@@ -53,7 +53,7 @@ jobs:
             exit 1
           fi
 
-          cp "$APK_PATH" myCar-debug.apk
+          cp "$APK_PATH" CloudStream-debug.apk
 
       # 7. Create GitHub Release
       - name: Create GitHub Release
@@ -62,8 +62,8 @@ jobs:
         run: |
           TAG="build-${GITHUB_RUN_NUMBER}-${GITHUB_RUN_ATTEMPT}"
 
-          gh release create "$TAG" myCar-debug.apk \
+          gh release create "$TAG" CloudStream-debug.apk \
             --target "$GITHUB_SHA" \
-            --title "myCar Build #${GITHUB_RUN_NUMBER}" \
+            --title "CloudStream Build #${GITHUB_RUN_NUMBER}" \
             --notes "Automated build from commit ${GITHUB_SHA}" \
             --prerelease
